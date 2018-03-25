@@ -1,20 +1,17 @@
 <?php
-//membuat koneksi ke database
 $host = 'localhost';
   $user = 'root';      
   $password = '';      
-  $database = 'akademik';  
+  $database = 'unisbank';  
     
   $konek_db = mysql_connect($host, $user, $password);    
   $find_db = mysql_select_db($database) ;
 ?>
 
 <center> 
-<h2>MENAMPILKAN DATA MAHASISWA</h2> 
+MENAMPILKAN DATA MAHASISWA 
 <br>
-
-<!-- ///////////////////////////// Script untuk membuat tabel///////////////////////////////// -->
-
+<br>
 <table  border='1' Width='800'>  
 <tr>
     <th> NIM </th>
@@ -25,12 +22,10 @@ $host = 'localhost';
 </tr>
 
 <?php  
-// Perintah untuk menampilkan data
-$queri="Select * From mahasiswa" ;  //menampikan SEMUA data dari tabel siswa
+$queri="Select * From mahasiswa" ;
 
-$hasil=MySQL_query ($queri);    //fungsi untuk SQL
+$hasil=MySQL_query ($queri);
 
-// perintah untuk membaca dan mengambil data dalam bentuk array
 while ($data = mysql_fetch_array ($hasil)){
 $id = $data['nim'];
  echo "    
@@ -90,7 +85,7 @@ $b->appendChild( $progdi );
 $r->appendChild( $b );
 }
  
-echo $doc->saveXML();
+//echo $doc->saveXML();
 $doc->save("data_mahasiswa.xml");
 
 ?>
